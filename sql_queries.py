@@ -1,14 +1,14 @@
 # DROP TABLES
 
-songplay_table_drop = "DROP TABLE IF EXISTS songplay;"
+songplay_table_drop = "DROP TABLE IF EXISTS songplays;"
 user_table_drop = "DROP TABLE IF EXISTS users;"
 song_table_drop = "DROP TABLE IF EXISTS songs;"
-artist_table_drop = "DROP TABLE IF EXISTS artist;"
+artist_table_drop = "DROP TABLE IF EXISTS artists;"
 time_table_drop = "DROP TABLE IF EXISTS time;"
 
 # CREATE TABLES
 
-songplay_table_create = ("CREATE TABLE IF NOT EXISTS songplay (\
+songplay_table_create = ("CREATE TABLE IF NOT EXISTS songplays (\
                             songplay_id SERIAL PRIMARY KEY, \
                             start_time TIMESTAMP NOT NULL, \
                             user_id INT NOT NULL, \
@@ -33,7 +33,7 @@ song_table_create = ("CREATE TABLE IF NOT EXISTS songs( \
                         year INT, \
                         duration DOUBLE PRECISION);")
 
-artist_table_create = ("CREATE TABLE IF NOT EXISTS artist( \
+artist_table_create = ("CREATE TABLE IF NOT EXISTS artists( \
                             artist_id VARCHAR PRIMARY KEY, \
                             name VARCHAR(127), \
                             location VARCHAR(255), \
