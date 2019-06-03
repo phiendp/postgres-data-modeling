@@ -8,20 +8,46 @@ time_table_drop = ""
 
 # CREATE TABLES
 
-songplay_table_create = ("""
-""")
+songplay_table_create = ("CREATE TABLE IF NOT EXISTS songplay (\
+                            songplay_id SERIAL PRIMARY KEY, \
+                            start_time TIMESTAMP NOT NULL, \
+                            user_id INT NOT NULL, \
+                            level VARCHAR, \
+                            song_id VARCHAR(50), \
+                            artist_id  VARCHAR(50), \
+                            session_id INT, \
+                            location VARCHAR, \
+                            user_agent TEXT \);")
 
-user_table_create = ("""
-""")
+user_table_create = ("CREATE TABLE IF NOT EXISTS users (\
+                        user_id INT PRIMARY KEY, \
+                        first_name VARCHAR, \
+                        last_name VARCHAR, \
+                        gender VARCHAR(3), \
+                        level VARCHAR \);")
 
-song_table_create = ("""
-""")
+song_table_create = ("CREATE TABLE IF NOT EXISTS songs( \
+                        song_id VARCHAR(50) PRIMARY KEY, \
+                        title VARCHAR(255), \
+                        artist_id VARCHAR(50), \
+                        year INT, \
+                        duration DOUBLE PRECISION);")
 
-artist_table_create = ("""
-""")
+artist_table_create = ("CREATE TABLE IF NOT EXISTS artist( \
+                            artist_id VARCHAR PRIMARY KEY, \
+                            name VARCHAR(127), \
+                            location VARCHAR(255), \
+                            lattitude FLOAT, \
+                            longitude FLOAT);")
 
-time_table_create = ("""
-""")
+time_table_create = ("CREATE TABLE IF NOT EXISTS time(\
+                        start_time TIMESTAMP, \
+                        hour INT, \
+                        day INT, \
+                        week INT, \
+                        month INT, \
+                        year INT, \
+                        weekday INT);")
 
 # INSERT RECORDS
 
