@@ -17,14 +17,14 @@ songplay_table_create = ("CREATE TABLE IF NOT EXISTS songplay (\
                             artist_id  VARCHAR(50), \
                             session_id INT, \
                             location VARCHAR, \
-                            user_agent TEXT \);")
+                            user_agent TEXT);")
 
 user_table_create = ("CREATE TABLE IF NOT EXISTS users (\
                         user_id INT PRIMARY KEY, \
                         first_name VARCHAR, \
                         last_name VARCHAR, \
                         gender VARCHAR(3), \
-                        level VARCHAR \);")
+                        level VARCHAR);")
 
 song_table_create = ("CREATE TABLE IF NOT EXISTS songs( \
                         song_id VARCHAR(50) PRIMARY KEY, \
