@@ -6,16 +6,21 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
-    # open song file
-    df =
+    """
+    Process song data, then insert into song and artist table
+    """
 
-    # insert song record
-    song_data =
+    # Open song file
+    df = pd.read_json(filepath, lines=True)
+
+    # Insert song record
+    song_data = df.iloc[:, [7,8,0,9,5]].values[0].tolist()
     cur.execute(song_table_insert, song_data)
 
-    # insert artist record
-    artist_data =
+    # Insert artist record
+    artist_data = df.iloc[:, [0,4,2,1,3]].values[0].tolist()
     cur.execute(artist_table_insert, artist_data)
+
 
 
 def process_log_file(cur, filepath):
